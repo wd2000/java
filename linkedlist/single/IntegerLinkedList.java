@@ -26,7 +26,25 @@ public class IntegerLinkedList {
     public void insertSorted(Integer value) {
 
         // add your code here
-
+		
+		// find the first Integer great or equal than "value"
+		IntegerNode cur = head, prev = head;
+		while(cur != null) {
+			if (cur.getValue().intValue() >= value.intValue() ){
+				break;
+			}
+			prev = cur;
+			cur = cur.getNext();
+		}
+	
+        if (cur == head) {   // if it is the head or empty
+			addToFront(value);
+		} else { // if it is last or in the middle
+			IntegerNode node = new IntegerNode(value);
+			prev.setNext(node);
+			node.setNext(cur);
+			size++;
+		}
     }
 
     public int getSize() {
