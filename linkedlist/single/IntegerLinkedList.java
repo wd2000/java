@@ -23,6 +23,10 @@ public class IntegerLinkedList {
         return removedNode;
     }
 
+	public IntegerNode getHead() {
+		return head;
+	}
+	
     public void insertSorted(Integer value) {
 
         // add your code here
